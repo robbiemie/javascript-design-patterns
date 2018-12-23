@@ -4,10 +4,10 @@
 
 ## 目录
 
-* [**设计模式**](#)
+* [**设计模式**](https://yang657850144.github.io/design-patterns/#/zh/object)
 
-* [第一章](#)
-  * [什么是面向对象](zh/object.md)
+* [第一章](https://yang657850144.github.io/design-patterns/#/zh/object)
+  * [什么是面向对象](https://yang657850144.github.io/design-patterns/#/zh/object)
 * [第二章 设计原则](#)
   * [持续更新](#)
 * [第三章 工厂模式](#)
