@@ -1,1 +1,5 @@
-console.log('asdasd')
+const init = _ => {
+  console.log('asdasd')
+}
+
+init()

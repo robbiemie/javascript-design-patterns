@@ -9,6 +9,15 @@ module.exports = {
     path: resolve(__dirname, '../dist'),
     filename: 'bundle.js'
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      }
+    ]
+  },
   devServer: {
     contentBase: resolve(__dirname, '../dist'),
     host: '0.0.0.0',
