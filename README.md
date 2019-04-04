@@ -1,6 +1,6 @@
 # Javascript 常用设计模式及应用
 
-[在线文档](https://yang657850144.github.io/design-patterns/#/zh/object)
+[在线文档](https://yang657850144.github.io/design-patterns/#/zh/01introduction/prototype)
 
 > 本文主要举例一些常用的设计模型，便于日常设计一些大型项目结构，便于后期扩展和维护。
 
