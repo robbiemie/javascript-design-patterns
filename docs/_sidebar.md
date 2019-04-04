@@ -7,6 +7,9 @@
   * [2. 构造函数继承](zh/01introduction/constructor.md)
   * [3. 实例继承](zh/01introduction/instance.md)
   * [4. 拷贝继承](zh/01introduction/copy.md)
+  * [5. 组合继承](zh/01introduction/combined.md)
+  * [6. 寄生组合继承](zh/01introduction/parasitic.md)
+  
   
 * [第一章 创建型设计模式](#)
   * [持续更新](#)
