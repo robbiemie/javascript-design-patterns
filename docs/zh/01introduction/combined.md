@@ -6,6 +6,7 @@
 
 // 父类构造函数
 function Parent (args) {
+  console.log('constructor', args)
   this.value1 = args[0]
   this.value2 = args[1]
   this.func = function () {
