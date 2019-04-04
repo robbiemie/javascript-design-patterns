@@ -1,7 +1,11 @@
 * [**设计模式**](/)
 
 * [前言](#)
-  * [什么是面向对象](zh/object.md)
+  * [什么是面向对象](zh/01introduction/object.md)
+  * [Javascript 常见继承方式](zh/01introduction/extends.md)
+  * [1. 原型继承](zh/01introduction/prototype.md)
+  * [2. 构造函数继承](zh/01introduction/constructor.md)
+  
 * [第一章 创建型设计模式](#)
   * [持续更新](#)
 * [第二章 结构型设计模式](#)
