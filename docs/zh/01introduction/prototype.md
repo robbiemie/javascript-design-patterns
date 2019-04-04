@@ -5,12 +5,12 @@
 
 ```javascript
 // 定义父类
-function Parent () {
-  this.value1 = 1 // 属性 value1
-  this.value2 = 2 // 属性 value2
-  this.func = function ( // 方法 func
-    cosnole.log('exec parent function')
-  )
+function Parent () {}
+// 挂载原型对象的属性和方法
+Parent.prototype.value1 = 1
+Parent.prototype.value2 = 2
+Parent.prototype.func = function () {
+  console.log(this.value1, this.value2)
 }
 
 ```
@@ -33,17 +33,14 @@ Child.prototype.constructor = Child // 将子类的原型对象的构造函数�
 
 ```javascript
 // 创建实例对象 child1
-let child1 = new Child()
-child.value1 // 1
-child.value2 // 2
-child.func() // exec parent function
-// 注意： 覆盖父类属性值
-child.value2 = 200
-// 创建实例对象 child2
-let child2 = new Child()
-child.value1 // 1
-child.value2 // 200
-child.func() // exec parent function
+console.log('child v1', child1 instanceof Child) // true
+console.log('child v1', child1 instanceof Parent) // true
+// 访问父类原型对象上的属性
+console.log('child v1', child1.value1) // 1
+console.log('child v2', child1.value2) // 2
+// 访问父类原型对象上的方法
+child1.func() // 1,2
+
 ```
 
 总结：
