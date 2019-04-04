@@ -16,18 +16,14 @@ function Parent (args) {
 }
 
 function Child (...args) {
-  Parent.call(this, args)
+  let p = new Parent(args)
+  for (let item in p) {
+    Child.prototype[item] = p[item]
+  }
 }
 
-let child1 = new Child(1, 2) // 传参
+let child1 = new Child(1, 2)
 console.log(child1 instanceof Child) // true
 console.log(child1 instanceof Parent) // false
-
 console.log(child1.value1) // 1
 console.log(child1.value2) // 2
-child1.func() // 1,2
-
-let child2 = new Child(3, 4) // 传参
-console.log(child2.value1) // 1
-console.log(child2.value2) // 2
-child2.func() // 1,2

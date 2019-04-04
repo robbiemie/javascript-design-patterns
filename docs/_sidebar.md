@@ -5,6 +5,8 @@
   * [Javascript 常见继承方式](zh/01introduction/extends.md)
   * [1. 原型继承](zh/01introduction/prototype.md)
   * [2. 构造函数继承](zh/01introduction/constructor.md)
+  * [3. 实例继承](zh/01introduction/instance.md)
+  * [4. 拷贝继承](zh/01introduction/copy.md)
   
 * [第一章 创建型设计模式](#)
   * [持续更新](#)
