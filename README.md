@@ -14,3 +14,15 @@
 - **技巧型设计模式**
 - **架构型设计模式**
 
+## 启动 docsify 服务
+
+```javascript
+$ npm install
+$ npm run docs
+```
+
+## 启动 devServer 服务
+
+```javascript
+$ npm run dev
+```

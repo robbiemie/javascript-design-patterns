@@ -20,8 +20,8 @@ module.exports = {
   },
   devServer: {
     contentBase: resolve(__dirname, '../dist'),
-    host: '0.0.0.0',
-    useLocalIp: true,
+    host: 'localhost',
+    // useLocalIp: true,
     disableHostCheck: true,
     port: 4000,
     quiet: true

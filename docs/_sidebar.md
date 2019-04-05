@@ -6,6 +6,10 @@
   
 * [第一章 创建型设计模式](#)
   * [1. 简单工厂模式](zh/02creation/simplefactory.md)
+  * [2. 工厂方法模式](zh/02creation/factory.md)
+  * [3. 抽象工厂模式](zh/02creation/abstractfactory.md)
+  
+ 
 
   * [持续更新](#)
 * [第二章 结构型设计模式](#)
