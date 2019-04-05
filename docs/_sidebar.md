@@ -8,6 +8,8 @@
   * [1. 简单工厂模式](zh/02creation/simplefactory.md)
   * [2. 工厂方法模式](zh/02creation/factory.md)
   * [3. 抽象工厂模式](zh/02creation/abstractfactory.md)
+  * [4. 单例模式](zh/02creation/singleton.md)
+  
   
  
 
