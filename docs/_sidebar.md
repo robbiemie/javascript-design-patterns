@@ -1,24 +1,21 @@
 * [**设计模式**](/)
 
-* [前言](#)
+* [前言](/)
   * [什么是面向对象](zh/01introduction/object.md)
   * [Javascript 常见继承方式](zh/01introduction/extends.md)
   
-* [第一章 创建型设计模式](#)
+* [第一章 创建型设计模式](zh/02creation/index.md)
   * [1. 简单工厂模式](zh/02creation/simplefactory.md)
   * [2. 工厂方法模式](zh/02creation/factory.md)
   * [3. 抽象工厂模式](zh/02creation/abstractfactory.md)
   * [4. 单例模式](zh/02creation/singleton.md)
-  
-  
- 
-
-  * [持续更新](#)
+  * [持续更新..](#)
 * [第二章 结构型设计模式](#)
-  * [持续更新](#)
-* [第三章 行为型设计模式](#)
-  * [持续更新](#)
-* [第四章 技巧型设计模式](#)
-  * [持续更新](#)
-* [第五章 架构型设计模式](#)
-  * [持续更新](#)
+  * [1. 简单工厂模式](zh/03construction/decorator.md)
+  * [持续更新..](#)
+* [第三章 行为型设计模式](zh/04action/index.md)
+  * [持续更新..](#)
+* [第四章 技巧型设计模式](zh/05technology/index.md)
+  * [持续更新..](#)
+* [第五章 架构型设计模式](zh/06architecture/index.md)
+  * [持续更新..](#)
