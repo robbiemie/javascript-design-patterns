@@ -3,15 +3,10 @@
 * [前言](#)
   * [什么是面向对象](zh/01introduction/object.md)
   * [Javascript 常见继承方式](zh/01introduction/extends.md)
-  * [1. 原型继承](zh/01introduction/prototype.md)
-  * [2. 构造函数继承](zh/01introduction/constructor.md)
-  * [3. 实例继承](zh/01introduction/instance.md)
-  * [4. 拷贝继承](zh/01introduction/copy.md)
-  * [5. 组合继承](zh/01introduction/combined.md)
-  * [6. 寄生组合继承](zh/01introduction/parasitic.md)
-  
   
 * [第一章 创建型设计模式](#)
+  * [1. 简单工厂模式](zh/02creation/simplefactory.md)
+
   * [持续更新](#)
 * [第二章 结构型设计模式](#)
   * [持续更新](#)
