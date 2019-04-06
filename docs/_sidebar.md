@@ -22,4 +22,6 @@
   * [持续更新..](#)
 * [第五章 架构型设计模式](zh/06architecture/index.md)
   * [1.vue 生命周期](zh/06architecture/vuelifecycle.md)
+  * [2.mvc](zh/06architecture/mvc.md)
+  * [3.mvvm](zh/06architecture/mvvm.md)
   * [持续更新..](#)
