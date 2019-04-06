@@ -24,4 +24,5 @@
   * [1.vue 生命周期](zh/06architecture/vuelifecycle.md)
   * [2.mvc](zh/06architecture/mvc.md)
   * [3.mvvm](zh/06architecture/mvvm.md)
+  * [4.响应式原理](zh/06architecture/reactive.md)
   * [持续更新..](#)

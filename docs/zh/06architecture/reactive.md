@@ -1,3 +1,8 @@
+# 响应式原理
+
+> 首先使用 `Object.defineProperty` 方法来实现**监听数据**的变化。
+
+```javascript
 const noop = function () {}
 const description = {
   enumerable: true,
@@ -39,6 +44,25 @@ function defineReactive (data, key, val) {
   Object.defineProperty(data, key, description)
 }
 
+
+// 测试
+let data = {
+  name: 'yang',
+  origin: {
+    name: 'shanxi'
+  },
+  children: []
+}
+observer(data)
+data.name = 'xin' // 值改变了
+data.origin.name = 'guangdong' // 值改变了
+data.children.push({ // 未监听到数据变化
+  name: 'xiaoxiaoxing'
+})
+
+```
+
+```javascript
 function Dep () {
   this.subs = [] // subscription: 订阅器
 }
@@ -53,6 +77,9 @@ Dep.prototype = {
     })
   }
 }
+```
+
+```javascript
 /**
  *
  * @param {*} vm vue 实例对象
@@ -84,43 +111,4 @@ Watcher.prototype = {
   }
 }
 
-let data = {
-  name: 'yang',
-  origin: {
-    name: 'shanxi'
-  },
-  children: []
-}
-observer(data)
-data.name = 'xin' // 值改变了
-data.origin.name = 'guangdong' // 值改变了
-data.children.push({ // 未监听到数据变化
-  name: 'xiaoxiaoxing'
-})
-
-// const Observer = (function () {
-//   let _message = {}
-//   return {
-//     register (type, cb) {
-//       if (!_message[type]) {
-//         _message[type] = [cb]
-//       } else {
-//         _message[type].push(cb)
-//       }
-//     },
-//     notify (type) {
-//       _message[type].forEach(cb => {
-//         cb()
-//       })
-//     }
-//   }
-// })()
-
-// Observer.register('success', _ => {
-//   console.log('ooook')
-// })
-// Observer.register('success', _ => {
-//   console.log('ooono')
-// })
-
-// Observer.notify('success')
+```
