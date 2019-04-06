@@ -64,7 +64,9 @@ Mockjs 拦截 XHR 请求,请参考:
 ```
 
 
+
 ## 源码参考
 
+- [vue 监听数组](https://github.com/vuejs/vue/blob/dev/src/core/observer/array.js)
 - [Mockjs 实现参考](https://github.com/nuysoft/Mock/blob/refactoring/src/mock/xhr/xhr.js#L27)
 - [覆写 window.XMLHttpRequest](https://github.com/ilinsky/xmlhttprequest/blob/master/XMLHttpRequest.js#L534)
