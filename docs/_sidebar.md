@@ -1,6 +1,6 @@
 * [**设计模式**](/)
 
-* [前言](/)
+* [前言](zh/01introduction/index.md)
   * [什么是面向对象](zh/01introduction/object.md)
   * [Javascript 常见继承方式](zh/01introduction/extends.md)
   
@@ -25,4 +25,6 @@
   * [2.mvc](zh/06architecture/mvc.md)
   * [3.mvvm](zh/06architecture/mvvm.md)
   * [4.响应式原理](zh/06architecture/reactive.md)
+  * [持续更新..](#)
+* [第六章 前端模块化](zh/07modules/index.md)  
   * [持续更新..](#)
