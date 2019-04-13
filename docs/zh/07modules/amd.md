@@ -13,6 +13,11 @@
 
 ### 定义模块
 
+`define` 函数接受三个参数:
+
+- `name`: 定义模块名称 [可选]
+- `dependencies`: 定义模块依赖的其他模块 [可选]
+- `factory`: 定义模块的工厂函数
 
 1. **无依赖模块**
 
@@ -58,5 +63,186 @@ define('A',['B'],function(B){
 define(function(){
   // ...
 })
+
+```
+
+### 加载模块
+
+
+`require` 函数接受三个参数:
+
+- `dependencies`: 依赖的模块数组
+- `success`: 加载成功的回调。其中，参数为对应加载的模块
+- `fail`: 加载失败的回调。任意一个模块加载失败都会触发
+
+```javascript
+// 加载 A,B 模块
+require(['A'.'B'], function(A,B){
+
+},function(){
+  // catch error
+})
+```
+
+## 源码实现
+
+利用**自执行函数**的特性,可以将定义在模块内的方法属性进行私有化。
+
+- 首先，准备定义 `require` 和 `define` 两个**全局**方法。
+- 其次，需要定义一个**模块缓存器**，将定义好的模块进行缓存。
+
+
+### 1. 框架结构设计
+
+```javascript
+(function(global) {
+  // 定义模块缓存器
+  let moduleStorage = {}
+  // 定义 AMD 模块
+  let AMD = {}
+  // 挂载 require 方法
+  AMD.require = function () {}
+  // 挂载 define 方法
+  AMD.define = function () {}
+
+  // require 挂载到全局
+  global.require = function () {
+    AMD.require()
+  }
+  // define 挂载到全局
+  global.define = function () {
+    AMD.define()
+  }
+})(window)
+
+```
+
+### 2. define 方法设计
+
+
+`define` 函数接受三个参数:
+
+- `name`: 定义模块名称 [可选]
+- `dependencies`: 定义模块依赖的其他模块 [可选]
+- `factory`: 定义模块的工厂函数
+
+`define` 实际上就是将定义好的模块存储到缓存器中(形式类似于 `Map`)。
+
+
+```javascript
+// 定义模块缓存器
+let moduleStorage = {}
+// 定义 AMD 模块
+let AMD = {}
+AMD.define = function (name, dependencies, factory) {
+  if(!moduleStorage[name]) {
+    // 定义模块对象
+    let _module = {
+      name: name,
+      dependencies: dependencies,
+      factory: factory
+    }
+    // 缓存该模块
+    moduleStorage[name] = _module
+  }
+}
+```
+
+### 3. require 方式设计
+
+
+`require` 函数接受三个参数:
+
+- `dependencies`: 依赖的模块数组
+- `success`: 加载成功的回调。其中，参数为对应加载的模块
+- `fail`: 加载失败的回调。任意一个模块加载失败都会触发
+
+```javascript
+// 定义模块缓存器
+let moduleStorage = {}
+// 定义 AMD 模块
+let AMD = {}
+// 定义空函数
+let noop = function() {}
+...
+AMD.require = function (name, success, fail) {
+  // 获取模块对象
+  let module = moduleStorage[name]
+  if(!module.entity) {
+    // 获取依赖
+    let _args = []
+    let dependencies = module.dependencies
+    dependencies.forEach((item, index) => {
+      // 递归加载依赖模块对象
+      _args.push(this.require(item))
+    })
+    
+    // 构建模块实体资源
+    module.entity = module.facotry.apply(noop, _args)
+  }
+  return module.entity
+}
+```
+
+### 3. 简化后实现
+
+```javascript
+
+(function (global) {
+  let AMD = {}
+  // 模块缓存池
+  let moduleStorage = {}
+  /**
+   * 定义模块
+   * @param {name} args[0] 模块名称
+   * @param {dependencies} args[1] 模块依赖
+   * @param {factory} args[2] 模块定义的工厂函数
+   */
+  AMD.defineM = function (args) {
+    let _name, _dependencies, _factory
+    _name = args[0]
+    _dependencies = args[1]
+    _factory = args[2]
+    if (!moduleStorage.hasOwnProperty(_name)) {
+      // 缓存未定义模块
+      let _module = {
+        name: _name,
+        dependencies: _dependencies,
+        factory: _factory
+      }
+      moduleStorage[_name] = _module
+    }
+  }
+  /**
+   * 加载模块
+   * @param {name} args[0] 模块名称
+   * @param {factory} args[2] 工厂函数
+   */
+  AMD.requireM = function (args) {
+    return this.emit(args)
+  }
+  AMD.emit = function (args) {
+    let name = args[0]
+    let module = moduleStorage[name]
+    if (typeof module.entity === 'undefined') {
+      let _args = []
+      // 执行工厂函数
+      module.entity = module.factory.apply(function () {}, _args)
+    }
+    return module.entity
+  }
+  global.defineM = function (...args) {
+    AMD.defineM(args)
+  }
+  global.requireM = function (...args) {
+    return AMD.requireM(args)
+  }
+})(window)
+
+defineM('module1', [], function () {
+  console.log('module1 exec')
+})
+
+requireM('module1')
 
 ```

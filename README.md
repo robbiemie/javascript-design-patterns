@@ -13,7 +13,7 @@
 - [第三章 行为型设计模式](https://yang657850144.github.io/javascript-design-patterns/#/zh/04action/index)
 - [第四章 技巧型设计模式](https://yang657850144.github.io/javascript-design-patterns/#/zh/05technology/index)
 - [第五章 架构型设计模式](https://yang657850144.github.io/javascript-design-patterns/#/zh/06architecture/index)
-- [第六章 前端模块化](https://yang657850144.github.io/javascript-design-patterns/#/zh/07modules/index)
+- [第六章 前端模块化（续）](https://yang657850144.github.io/javascript-design-patterns/#/zh/07modules/index)
 
 ## 启动 docsify 服务
 
