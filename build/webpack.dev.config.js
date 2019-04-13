@@ -24,6 +24,7 @@ module.exports = {
     // useLocalIp: true,
     disableHostCheck: true,
     port: 4000,
+    open: true,
     quiet: true
   },
   plugins: [

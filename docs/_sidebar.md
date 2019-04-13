@@ -10,7 +10,7 @@
   * [3. 抽象工厂模式](zh/02creation/abstractfactory.md)
   * [4. 单例模式](zh/02creation/singleton.md)
   * [持续更新..](#)
-* [第二章 结构型设计模式](#)
+* [第二章 结构型设计模式](zh/03construction/index.md)
   * [1.装饰器模式](zh/03construction/decorator.md)
   * [2.代理模式](zh/03construction/proxy.md)
   * [持续更新..](#)
