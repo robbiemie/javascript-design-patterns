@@ -27,4 +27,5 @@
   * [4.响应式原理](zh/06architecture/reactive.md)
   * [持续更新..](#)
 * [第六章 前端模块化](zh/07modules/index.md)  
+  * [1. AMD](zh/07modules/amd.md)
   * [持续更新..](#)
